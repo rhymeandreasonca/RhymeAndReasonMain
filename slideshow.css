@@ -1,0 +1,19 @@
+* {margin:0; padding:0}
+body {font:12px Verdana,Arial; color:#555; background:#fff}
+p {line-height:1.4; margin-bottom:12px}
+#wrapper {width:880px;}
+
+.sliderbutton {float:left; width:32px; padding-top:134px}
+.sliderbutton img {cursor:pointer}
+.sliderbutton img:hover {background:#fff}
+#slideshow {float:left; width:800px; height:200px; border:2px solid #fff; background:#fff}
+#slides {position:relative; width:800px; height:200px; list-style:none; overflow:auto}
+#slides li {width:800px; height:200px}
+
+.pagination {float:left; list-style:none; height:25px; margin:15px 0 0 32px}
+.pagination li { float:left;  padding:5px 8px; margin:0 4px 0 0; text-align:center; }
+.pagination li:hover {}
+li.current {}
+
+li#content {width:464px; height:270px; padding:15px 18px 15px 18px; background:#fff}
+#content h1 {font:22px Georgia,Verdana; margin-bottom:15px; color:#036}

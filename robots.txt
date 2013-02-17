@@ -1,0 +1,4 @@
+Sitemap: http://rhymeandreason.ca/sitemap.xml
+
+User-agent: *
+Disallow:

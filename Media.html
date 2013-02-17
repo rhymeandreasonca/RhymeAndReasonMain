@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" type="text/css" href="Images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+		<script src="scripts/jquery.js" type="text/javascript"></script>
+		<script src="scripts/twitter_search.js" type="text/javascript"></script>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta name="Classification" content="business">
+		<meta name="description" content="Rhyme and Reason is a new Calgary-based early literacy and numeracy program for infants ages 0-8 months and 8-24 months. Our eight or ten week programs use fun, high-energy songs, stories, and activities to give your child the foundation they need to succeed when they reach school-age.">
+		<meta name="keywords" content="rhyme, reason, early literacy, early numeracy, literacy, numeracy, baby programs, infant programs, calgary infant classes, calgary baby classes, calgary, independant, parent-child mother goose, early childhood development, child education, infant education, baby, infant, education, classes, programs, baby classes, infant classes, infants, babies, children, calgary public library, library, airdrie, cochrane, toddler, alex, may, 0-24 months, toddlers, newborns, newborn, toddler,">
+
+		<title>Media</title>
+
+		<style type="text/css">@import url("Dimbo_Regular/stylesheet.css");</style>
+		<script type="text/xml">
+			<!--
+			<oa:widgets>
+			  <oa:widget wid="2125523" binding="#twitter" />
+			</oa:widgets>
+			-->
+		</script>
+	</head>
+
+<body>
+
+<!-- Header Banner and Buttons -->		
+			<div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons"><a href="index.html" onMouseOver='changeBtn(1,"Images/home button small.jpg")' onMouseOut='changeBtn(1,"Images/home button.jpg")'><img src="Images/home button.jpg" class="button" alt="Home"></a><a href="aboutus.html" onMouseOver='changeBtn(2,"Images/about us button small.jpg")' onMouseOut='changeBtn(2,"Images/about us button.jpg")'><img src="Images/about us button.jpg" class="button" alt="About Us"></a><a href="Classes.html" onMouseOver='changeBtn(3,"Images/classes button small.jpg")' onMouseOut='changeBtn(3,"Images/classes button.jpg")'><img src="Images/classes button.jpg" class="button" alt="Classes"></a><a href="Media.html" onMouseOver='changeBtn(4,"Images/media button small.jpg")' onMouseOut='changeBtn(4,"Images/media button.jpg")'><img src="Images/media button.jpg" class="button" alt="Media"></a><a href="ContactUs.html" onMouseOver='changeBtn(5,"Images/contact us button small.jpg")' onMouseOut='changeBtn(5,"Images/contact us button.jpg")'><img src="Images/contact us button.jpg" class="button" alt="Contact Us"></a></div>
+
+		<div id="mediacontainer">
+
+<!-- Twitter Feed Division -->
+			<div id="twitterfeed">
+				<img src="Images/TwitterFeed.gif" alt="TwitterFeed" width="382" height="600">
+				<a href="https://twitter.com/#!/rhymereasonlit"><div id="twitter"></div></a>
+			</div>
+
+			<script type="text/javascript">
+			// BeginOAWidget_Instance_2125523: #twitter
+
+			$(document).ready(function() {
+				$('#twitter').twitterSearch({
+					term: 'from%3A@Rhymereasonlit',
+					title: '',
+					titleLink: 'http://www.rhymeandreason.ca',
+					bird: false,					// true or false (show or hide twitter bird image)
+					birdSrc: '', 		// twitter bird image
+					birdLink: '',		// url that twitter bird image should like to
+					avatar: true,				// true or false (show or hide twitter profile images)
+					anchors: true,			// true or false (enable embedded links in tweets)
+					animOutSpeed: 500,	// speed of animation for top tweet when removed
+					animInSpeed: 500,	// speed of scroll animation for moving tweets up
+					pause: true,				// true or false (pause on hover)
+					time: true,					// true or false (show or hide the time that the tweet was sent)
+					timeout: 100000,			// delay betweet tweet scroll
+					css: { 
+						a:     { textDecoration: 'none', color: '#3300cc', fontWeight: 'bold', fontSize: '9.5pt', fontFamily: 'arial'},
+						container: { backgroundColor: '#ffffff' },
+						frame: { border: '0px solid #33cc99', borderRadius: '6px', '-moz-border-radius': '6px', '-webkit-border-radius': '6px' },
+						img:   { width: '40px', height: '40px' },
+						loading: { color: '#888' },
+						text:  {fontWeight: 'normal', fontSize: '9pt', color:'#000', fontFamily: 'arial'},
+						time:  { fontSize: '10px', color: '#000000', fontFamily:'arial' },
+						title: { backgroundColor: '#ffffff', padding: '5px 0 5px 0', textAlign: 'center', fontWeight: 'bold', fontSize: '12px'},
+						titleLink: { textDecoration: 'none', color: '#000000' },
+						user:  { fontSize: '14px'},
+						fail:  { background: '#6cc5c3 url(/images/failwhale.png) no-repeat 50% 50%'}
+					}
+				});
+			});
+					
+			// EndOAWidget_Instance_2125523
+			</script>
+
+<!-- Video Division -->
+
+			<div id="video">
+				<img src="Images/tv-no-mid.gif" width="599" height="495" alt="Television">
+
+				<div id="videoplayer">
+					<div id="mediaplayer"><a>Video is loading...</a></div>
+
+				<script type="text/javascript">
+				    jwplayer("mediaplayer").setup({
+				        flashplayer: "jwplayer/player.swf",
+				        file: "jwplayer/iwonder.mp4",
+						image: "Images/RhymeandReasonLogo.png",
+				        height: 270,
+				        width: 480
+				    });
+				</script>
+
+				</div>
+
+			</div>
+
+<!-- Video Links Division-->
+
+			<div id="videolinks">
+				<a onClick="video1()" onMouseOver="changeTv('tv1')" onMouseOut="returnTv('tv1')">
+				    <img src="Images/small_tv.gif" id="tv1" width="100" height="100" alt="Video1">
+				    	<div id="video1">I Wonder</div>
+				</a><br />
+				<a onClick="video2()" onMouseOver="changeTv('tv2')" onMouseOut="returnTv('tv2')">
+				    <img src="Images/small_tv.gif" id="tv2" width="100" height="100" alt="Video2"></a>
+				    	<div id="video2">Eat my Veggies</div>
+				</a><br />
+				<a onClick="video3()" onMouseOver="changeTv('tv3')" onMouseOut="returnTv('tv3')">
+				    <img src="Images/small_tv.gif" id="tv3" width="100" height="100" alt="Video3"></a>
+				    	<div id="video3">Dreaming of You</div>
+				</a><br />
+				<a onClick="video4()" onMouseOver="changeTv('tv4')" onMouseOut="returnTv('tv4')">
+				    <img src="Images/small_tv.gif" id="tv4" width="100" height="100" alt="Video4"></a>
+				    	<div id="video4">Calgary's Child Global TV</div>
+				</a><br />
+			</div>
+
+		</div>
+
+<!-- Footer Navigation -->
+		<div id="divider"><hr /></div>
+		<div id="navlinks">
+			<p><div id="homediv"><a class="navlink" href="index.html">Home</a></div>|<div id="aboutdiv"><a class="navlink" href="aboutus.html">About Us</a></div>|<div id="classesdiv"><a class="navlink" href="Classes.html">Classes</a></div>|<div id="mediadiv"><a class="navlink" href="Media.html">Media</a></div>|<div id="contactdiv"><a class="navlink" href="ContactUs.html">Contact Us</a></div></p>
+			<p>Copyright 2012 &copy; Rhyme and Reason</p>
+		</div>
+
+	</body>
+</html>
