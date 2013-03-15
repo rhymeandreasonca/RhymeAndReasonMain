@@ -171,14 +171,6 @@
 
 /*About Us Styles*/ 
 
-	#aboutcontain {
-		width:1144px;
-		margin-left:auto;
-		margin-right:auto;
-		margin-top: 20px;
-
-	}
-
 	#aboutleft {
 		margin-top: 10px;
 		width: 302px;
@@ -212,12 +204,6 @@
 		text-align: justify;
 		font-family: arial;
 		font-size: 13pt;
-	}
-
-	h1 {
-		font-family: dimboregular;
-		font-size: 26pt;
-		margin: 0px 0px 0px 0px;
 	}
 
 /*Classes Styles*/
@@ -418,7 +404,7 @@
 		margin-top:20px;
 		font-family: Arial;
 		font-size: 36px;
-		text-align: center;	
+		text-align: left;	
 		padding: 2px;		
 	}
 
@@ -435,10 +421,8 @@
 		margin: 0px 0px 0px 0px;
 	}
 
-
 	form.cmxform fieldset {
-		width:800px;
-		margin: 20px auto 10px auto;		
+		width:949px;
 	}
 
 	form.cmxform legend {
