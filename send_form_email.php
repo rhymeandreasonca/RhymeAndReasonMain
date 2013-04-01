@@ -1,9 +1,22 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="main.css" />
-<title>Registration Form</title>
+        <link rel="shortcut icon" type="text/css" href="Images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <script type="text/javascript" src="main.js"></script>
+            <script type="text/javascript" src="classes.js"></script>
+    <script type="text/javascript" src="include.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta name="Classification" content="business">
+        <meta name="description" content="Rhyme and Reason is a new Calgary-based early literacy and numeracy program for infants ages 0-8 months and 8-24 months. Our eight or ten week programs use fun, high-energy songs, stories, and activities to give your child the foundation they need to succeed when they reach school-age.">
+        <meta name="keywords" content="rhyme, reason, early literacy, early numeracy, literacy, numeracy, baby programs, infant programs, calgary infant classes, calgary baby classes, calgary, independant, parent-child mother goose, early childhood development, child education, infant education, baby, infant, education, classes, programs, baby classes, infant classes, infants, babies, children, calgary public library, library, airdrie, cochrane, toddler, alex, may, 0-24 months, toddlers, newborns, newborn, toddler,">
+
+    <script>
+        function cancel(){
+            window.location.href = 'cancelregistration.php';
+        }
+    </script>
+        
 </head>
 
 <body>
@@ -56,7 +69,7 @@ if(isset($_POST['email'])) {
      
     $adult_first_name = $_POST['firstname']; // required
     $adult_middle_name = $_POST['middlename']; // required
-	$adult_last_name = $_POST['lastname']; // required
+    $adult_last_name = $_POST['lastname']; // required
     $adult_address = $_POST['address']; // required
     $adult_cell_phone = $_POST['cellphone']; // required
     $adult_home_phone = $_POST['homephone']; // not required
@@ -92,13 +105,9 @@ if(isset($_POST['email'])) {
   if(!preg_match($string_exp,$adult_last_name)) {
     $error_message .= 'The Adult Last Name you entered does not appear to be valid.<br />';
   }
-  if($class_choice =='coupon') {
-	  if(!in_array($coupon_code, array('D010V', 'BR04T','B00K5'))) 
-	  {
-		 $error_message .= 'The Coupon Code you have entered does not appear to be valid. Coupon Codes are case-sensitive.<br />'; 
-		 $error_message .= $coupon_code+'<br /';
-	  }
-  }
+  //  if($coupon_code != 'B00K5' || $coupon_code != 'b') {
+  //        $error_message .= 'The Coupon Code you have entered does not appear to be valid. Coupon Codes are case-sensitive.<br />';
+  // }
   if(strlen($error_message) > 0) {
     died($error_message);
   }
@@ -133,202 +142,74 @@ if(isset($_POST['email'])) {
     $email_message .= "Emergency Phone: ".clean_string($emerg_phone)."\n";
     $email_message .= "Emergency Relation: ".clean_string($emerg_relation)."\n";
     $email_message .= "Concerns: ".clean_string($concerns)."\n";
-	$email_message .= "Date Terms Agreed: ".clean_string(date('l jS \of F Y h:i:s A'));
+    $email_message .= "Date Terms Agreed: ".clean_string(date('l jS \of F Y h:i:s A'));
      
      
 // create email headers
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+@mail($email_to, $email_subject, $email_message, $headers);
+
+    $class;
+    $classlink;
+    $coupon = false;
+    $couponaccept = 'Your coupon code has been accepted!';
+
+    switch ($class_choice) {
+        case 'tuesday100':
+            $class = 'Tuesdays at 1:00pm - 2:00pm, from Apr. 23rd - May 28th';
+            $classlink = 'ST3EPSCJR6458';
+            if($coupon_code=='B00K5'){
+                $classlink = '7FVK8NRG2BHMC';
+                $coupon = true;
+            }
+            elseif($coupon_code && $coupon_code != 'B00K5'){
+                $coupon = true;
+                $couponaccept = 'Sorry! That coupon code is not valid for this class.';
+            }
+            break;
+        case 'tuesday230':
+            $class = 'Tuesdays at 2:30pm - 3:30pm, from Apr. 23rd - May 28th';
+            $classlink = '2A3QTCNDAGY4G';
+            break;
+        default:
+            $class = 'Error';
+            $classlink = '';
+            break;
+      }  
 ?>
  
 <!-- include your own success html here -->
 
+<!-- Header Banner and Buttons -->      
+            <div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons"><a href="index.html" onMouseOver='changeBtn(1,"Images/home button small.jpg")' onMouseOut='changeBtn(1,"Images/home button.jpg")'><img src="Images/home button.jpg" class="button" alt="Home"></a><a href="aboutus.html" onMouseOver='changeBtn(2,"Images/about us button small.jpg")' onMouseOut='changeBtn(2,"Images/about us button.jpg")'><img src="Images/about us button.jpg" class="button" alt="About Us"></a><a href="Classes.html" onMouseOver='changeBtn(3,"Images/classes button small.jpg")' onMouseOut='changeBtn(3,"Images/classes button.jpg")'><img src="Images/classes button.jpg" class="button" alt="Classes"></a><a href="Media.html" onMouseOver='changeBtn(4,"Images/media button small.jpg")' onMouseOut='changeBtn(4,"Images/media button.jpg")'><img src="Images/media button.jpg" class="button" alt="Media"></a><a href="ContactUs.html" onMouseOver='changeBtn(5,"Images/contact us button small.jpg")' onMouseOut='changeBtn(5,"Images/contact us button.jpg")'><img src="Images/contact us button.jpg" class="button" alt="Contact Us"></a></div>
 
-<div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons"><a href="index.html" onMouseOver='changeBtn(1,"Images/home button small.jpg")' onMouseOut='changeBtn(1,"Images/home button.jpg")'><img src="Images/home button.jpg" class="button" alt="Home"></a><a href="aboutus.html" onMouseOver='changeBtn(2,"Images/about us button small.jpg")' onMouseOut='changeBtn(2,"Images/about us button.jpg")'><img src="Images/about us button.jpg" class="button" alt="About Us"></a><a href="Classes.html" onMouseOver='changeBtn(3,"Images/classes button small.jpg")' onMouseOut='changeBtn(3,"Images/classes button.jpg")'><img src="Images/classes button.jpg" class="button" alt="Classes"></a><a href="Media.html" onMouseOver='changeBtn(4,"Images/media button small.jpg")' onMouseOut='changeBtn(4,"Images/media button.jpg")'><img src="Images/media button.jpg" class="button" alt="Media"></a><a href="ContactUs.html" onMouseOver='changeBtn(5,"Images/contact us button small.jpg")' onMouseOut='changeBtn(5,"Images/contact us button.jpg")'><img src="Images/contact us button.jpg" class="button" alt="Contact Us"></a></div>
-
-<?php
-if ($_POST['choice']=='coupon')
-{
-	if ($_POST['couponcode']=='D010V')
-	{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Your coupon code has been accepted.</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="JG4S86ZEKER3W">
-<input type="image" src="Images/proceed-to-paypal.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" width= "192px" height= "94px"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>
-<?php
-}
-}
-?>
-<?php
-if ($_POST['choice']=='coupon')
-{
-	if ($_POST['couponcode']=='BR04T')
-	{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Your coupon code has been accepted.</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="R87P63MDDTAZ6">
-<input type="image" src="Images/proceed-to-paypal.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" width= "192px" height= "94px"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-<?php
-}
-}
-?>
-<?php
-if ($_POST['choice']=='tuesday100' && $_POST['couponcode']=='B00K5')
-{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Tuesdays at 1:00pm - 2:00pm, from Feb. 12th - Mar. 19th. Your coupon code has been accepted.</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="7FVK8NRG2BHMC">
-<input type="image" src="Images/proceed-to-paypal.gif" style="width: 192px; height: 94px;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-
-<?php
-}
-elseif ($_POST['choice']=='tuesday100')
-{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Tuesdays at 1:00pm - 2:00pm, from Feb. 12th - Mar. 19th</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="ST3EPSCJR6458">
-<input type="image" src="Images/proceed-to-paypal.gif" style="width: 192px; height: 94px;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-<?php
-}
-elseif ($_POST['choice']=='tuesday230')
-{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Tuesdays at 2:30pm - 3:30pm, from Feb. 19th - Mar. 19th</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="2A3QTCNDAGY4G">
-<input type="image" src="Images/proceed-to-paypal.gif" style="width: 192px; height: 94px;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-<?php
-}
-elseif ($_POST['choice']=='friday930')
-{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p id="datentime"><font face="Arial" size="5"><b>Fridays at 9:30am - 10:30am, from Feb. 8th - Apr. 5th</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="XFEZHAYZUVWAA">
-<input type="image" src="Images/proceed-to-paypal.gif" style="width: 192px; height: 94px;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-<?php
-}
-elseif ($_POST['choice']=='friday1115')
-{
-?>
-
-<div id="aboutcontain">
-<p><font face="Arial" size="5"><b>Thank you for registering in Rhyme and Reason!</b></font></p> 
-<p><font face="Arial" size="5"><b>Fridays at 11:15am - 12:15pm, Feb. 8th - Apr. 5th</b></font></p>
-
-<p><font face="Arial" size="4">The last step for enrollment is payment.</font></p>
-<p><font face="Arial" size="4">We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</font></p>
-
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="CKZA2C5LNA74J">
-<input type="image" src="Images/proceed-to-paypal.gif" style="width: 192px; height: 94px;" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><a href="cancelregistration.php"><img src="Images/cancel-registration.gif" width="192" height="94" alt="Cancel"></a>
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</div>
-<?php
-}
-?>
-
-</div>
-
-
-<div style="position: absolute; top: 955px; left:420px; width: 730px; height: 100px; z-index: 5;"><div style="position: absolute; top:0px; left:0px; width: 80px; height: 20px; z-index: 6;"></div></div> 
-<div id="divider"><hr /></div>
-    <div id="navlinks">
-      <p><div id="homediv"><a class="navlink" href="index.html">Home</a></div>|<div id="aboutdiv"><a class="navlink" href="aboutus.html">About Us</a></div>|<div id="classesdiv"><a class="navlink" href="Classes.html">Classes</a></div>|<div id="mediadiv"><a class="navlink" href="Media.html">Media</a></div>|<div id="contactdiv"><a class="navlink" href="ContactUs.html">Contact Us</a></div></p>
-      <p>Copyright 2012 &copy; Rhyme and Reason</p>
-    </div> 
-<?php
-}
-?>
+    <div id="aboutcontain" style="width:1144px;margin-left:auto;margin-right:auto;margin-top: 20px;">
+            <p>Thank you for registering in Rhyme and Reason!</p>
+            <p><?php echo($class);?></p>
+            <p><?php if($coupon){echo($couponaccept);$coupon=false;}?></p>
+            <p>We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="<?php echo($classlink);?>">
+            <input type="button" value="Proceed to Paypal" alt="PayPal - The safer, easier way to pay online!" onclick="submit()" />
+            <input type="button" value="Cancel" onclick='cancel()'>
+            </form>
+    </div>
+    
+<!-- Footer Navigation -->
+        <div id="divider"><hr /></div>
+        <div id="navlinks">
+            <p><div id="homediv"><a class="navlink" href="index.html">Home</a></div>|<div id="aboutdiv"><a class="navlink" href="aboutus.html">About Us</a></div>|<div id="classesdiv"><a class="navlink" href="Classes.html">Classes</a></div>|<div id="mediadiv"><a class="navlink" href="Media.html">Media</a></div>|<div id="contactdiv"><a class="navlink" href="ContactUs.html">Contact Us</a></div></p>
+            <p>Copyright 2012 &copy; Rhyme and Reason</p>
+        </div>
 
 
 
 </body>
 </html>
+
+<?php
+}
+?>

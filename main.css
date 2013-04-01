@@ -180,7 +180,6 @@
 	}
 
 	#aboutleftcontain {
-		margin-top: 75px;
 		border: solid 1px #9A9A9A;
 		border-radius: 10px;
 	}
@@ -405,7 +404,8 @@
 		font-family: Arial;
 		font-size: 36px;
 		text-align: left;	
-		padding: 2px;		
+		padding: 2px;
+		text-align: center;		
 	}
 
 	#regi h1 {
@@ -723,7 +723,7 @@
   #olcontright ul{
     font-family: arial;
     font-size: 12pt;
-    color: #000000;
+    color:#555;
   }
 
   .register{
