@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link rel="shortcut icon" type="text/css" href="Images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script type="text/javascript" src="main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="Classification" content="business">
+    <meta name="description" content="Rhyme and Reason is a new Calgary-based early literacy and numeracy program for infants ages 0-8 months and 8-24 months. Our eight or ten week programs use fun, high-energy songs, stories, and activities to give your child the foundation they need to succeed when they reach school-age.">
+    <meta name="keywords" content="rhyme, reason, early literacy, early numeracy, literacy, numeracy, baby programs, infant programs, calgary infant classes, calgary baby classes, calgary, independant, parent-child mother goose, early childhood development, child education, infant education, baby, infant, education, classes, programs, baby classes, infant classes, infants, babies, children, calgary public library, library, airdrie, cochrane, toddler, alex, may, 0-24 months, toddlers, newborns, newborn, toddler,">
+<title>At Home with Mother Goose Class Request</title>
+
+<style type="text/css">
+      @import url("Dimbo_Regular/stylesheet.css");
+    </style>
+
+</head>
+
+<body>
+<!-- Header Banner and Buttons -->    
+      <div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons"><a href="index.html" onMouseOver='changeBtn(1,"Images/home button small.jpg")' onMouseOut='changeBtn(1,"Images/home button.jpg")'><img src="Images/home button.jpg" class="button" alt="Home"></a><a href="aboutus.html" onMouseOver='changeBtn(2,"Images/about us button small.jpg")' onMouseOut='changeBtn(2,"Images/about us button.jpg")'><img src="Images/about us button.jpg" class="button" alt="About Us"></a><a href="Classes.html" onMouseOver='changeBtn(3,"Images/classes button small.jpg")' onMouseOut='changeBtn(3,"Images/classes button.jpg")'><img src="Images/classes button.jpg" class="button" alt="Classes"></a><a href="Media.html" onMouseOver='changeBtn(4,"Images/media button small.jpg")' onMouseOut='changeBtn(4,"Images/media button.jpg")'><img src="Images/media button.jpg" class="button" alt="Media"></a><a href="ContactUs.html" onMouseOver='changeBtn(5,"Images/contact us button small.jpg")' onMouseOut='changeBtn(5,"Images/contact us button.jpg")'><img src="Images/contact us button.jpg" class="button" alt="Contact Us"></a></div>
+
+<div id="regi">
+<h1>Class Request - At Home with Mother Goose</h1> 
+<p> - Fields marked <span style="color=#F00">*</span> are required.</p>
+</div>
+<form method="post" action="athomereq.php" onsubmit="return Validation()" class="athomereg" name="regis_form">
+
+<fieldset>
+  <legend>Contact Info:</legend>
+  <ol style="list-style:none; display:inline-block;">
+    <li style="display:inline-block;margin-right:10px">
+      <label for="name">Name<em>*</em></label><br />
+      <input id="name" name="name" size="25">
+    </li>
+    <li style="display:inline-block;margin-right:10px">
+      <label for="phone">Phone<em>*</em></label><br/>
+      <input id="phone" name="phone" size="25">
+    </li>
+    <li style="display:inline-block">
+      <label for="email">Email<em>*</em></label><br />
+      <input id="email" name="email" size="35">
+    </li>
+  </ol>
+</fieldset>
+
+<fieldset>
+  <legend>Details</legend>
+    <label for="prevattend">Have you attended an At Home with Mother Goose program before?<em>*</em></label><br />
+    <input type="radio" name="prevattend" value="Yes">Yes
+    <input type="radio" name="prevattend" value="No">No<br/><br />
+
+    <label for="interests">What are your program interests?<em>*</em></label><br />
+    <input type="radio" name="interests" value="Hosting">Hosting
+    <input type="radio" name="interests" value="Attending">Attending<br /><br />
+
+
+    <label for="currentclass">If you are interested in attending, are you interested in attending a currently scheduled program?<em>*</em> </label><br />
+    <input type="radio" name="currentclass" value="Yes">Yes
+    <input type="radio" name="currentclass" value="No">No<br /><br />
+
+    <label for="class">If yes, which program?</label><br />
+    <select id="class" name="class">
+      <option>N/A</option>
+      <option>Friday 10:30am-11:30am, April 5-June 28</option>
+    </select><br /><br />
+
+    <label for="dow">Do you have a preferred day of the week?</label><br />
+    <select id="dow" name="dow">
+      <option>No Preference</option>
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
+    </select><br /><br />
+
+    <label for="tod">What is your preferred time of day for a program?</label><br />
+    <select id="tod" name="tod">
+      <option>No Preference</option>
+      <option>Morning</option>
+      <option>Afternoon</option>
+    </select><br /><br />
+
+    <label for="child">How old is/are your child/children?<em>*</em></label><br />
+    <input type="text" id="child" name="child"><br />
+    <br />
+    <input type="submit" value="Submit Request"/>
+</fieldset>
+        
+</form>
+
+<script type="text/javascript">
+
+function Validation()
+{
+  var name = document.getElementById('name');
+  var phone = document.getElementById('phone');
+  var email = document.getElementById('email');
+  var prevattend = document.getElementsByName('prevattend');
+  var interests = document.getElementsByName('interests');
+  var currentclass = document.getElementsByName('currentclass');
+  var child = document.getElementById('child');
+
+  if(name.value == '' || phone.value == '' || email.value == '' || (prevattend[0].checked == false && prevattend[1].checked == false) || (interests[0].checked == false && interests[1].checked == false)|| (currentclass[0].checked == false && currentclass[1].checked == false) || child.value == ''){
+
+      var msg ='Oops! You forgot to complete the following fields:\n\n';
+
+      if(name.value == ''){
+        msg += 'Name\n';
+      }
+
+      if(phone.value == ''){
+        msg += 'Phone\n';
+      }
+
+      if(email.value == ''){
+        msg += 'Email\n';
+      }
+
+      if(prevattend[0].checked == false && prevattend[1].checked == false){
+        msg += 'Have you attended an At Home with Mother Goose program before?\n';
+      }
+
+      if(interests[0].checked == false && interests[1].checked == false){
+        msg += 'What are your program interests?\n';
+      }
+
+      if(currentclass[0].checked == false && currentclass[1].checked == false){
+        msg += 'Are you interested in attending a currently scheduled program?\n';
+      }
+
+      if(child.value == ''){
+        msg += 'How old is/are your child/children?\n';
+      }
+
+      alert(msg);
+      return false;
+  }   
+
+
+}
+
+</script>
+
+<!-- Footer Navigation -->
+    <div id="divider"><hr /></div>
+    <div id="navlinks">
+      <p><div id="homediv"><a class="navlink" href="index.html">Home</a></div>|<div id="aboutdiv"><a class="navlink" href="aboutus.html">About Us</a></div>|<div id="classesdiv"><a class="navlink" href="Classes.html">Classes</a></div>|<div id="mediadiv"><a class="navlink" href="Media.html">Media</a></div>|<div id="contactdiv"><a class="navlink" href="ContactUs.html">Contact Us</a></div></p>
+      <p>Copyright 2012 &copy; Rhyme and Reason</p>
+    </div>
+
+  </body>
+</html>
+

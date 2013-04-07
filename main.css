@@ -479,6 +479,12 @@
 	  margin-left: 83px; /* Width plus 3 (html space) */
 	}
 
+/*At Home with Mother Goose Styles*/
+	.athomereg fieldset{
+		font-family: Arial;
+		font-size: 10pt;
+	}
+
 /*Wait List Styles*/ 
 
 	#waitlist {
