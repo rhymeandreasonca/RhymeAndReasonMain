@@ -182,6 +182,7 @@
 	#aboutleftcontain {
 		border: solid 1px #9A9A9A;
 		border-radius: 10px;
+		margin-bottom: 5px;
 	}
 
 	#aboutleftcontain p {
