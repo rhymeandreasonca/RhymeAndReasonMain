@@ -13,11 +13,11 @@ $(document).ready(function(){
       $('.tuesaft').css('border','3px solid #2BD6EA');
    });
 
-   $('.frimorn').hover(function(){
-      $('.frimorn').css('border','3px solid #57227E');
+   $('.tuesmorn').hover(function(){
+      $('.tuesmorn').css('border','3px solid #57227E');
    },
    function(){
-      $('.frimorn').css('border','3px solid #70BD17');
+      $('.tuesmorn').css('border','3px solid #70BD17');
    });
 
    $('.frimid').hover(function(){

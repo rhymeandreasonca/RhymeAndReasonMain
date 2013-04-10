@@ -733,6 +733,13 @@
     color:#555;
   }
 
+  #overlaycontainer ul{
+    margin: 0px 6px 20px 6px;
+    padding: 6px;
+    text-align: left;
+    list-style-position: inside;
+  }
+
   .register{
     padding: 5px;
     background-color: #57227E;
