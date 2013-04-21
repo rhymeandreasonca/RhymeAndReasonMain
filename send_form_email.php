@@ -173,9 +173,13 @@ $headers = 'From: '.$email_from."\r\n".
             $class = 'Tuesdays at 2:30pm - 3:30pm, from Apr. 23rd - May 28th';
             $classlink = '2A3QTCNDAGY4G';
             break;
-        case 'tuesday230':
-            $class = 'At Home with Mother Goose, Fridays at 10:30am - 11:30am, from Apr. 5th - June 24th';
-            $classlink = '';
+        case 'athometues':
+            $class = 'At Home with Mother Goose, Tuesdays at 9:30am - 10:30am, from Apr. 16th - June 25th';
+            $classlink = '5LM8KX9WF7L98';
+            break;
+        case 'athomefri':
+            $class = 'At Home with Mother Goose, Fridays at 10:30am - 11:30am, from Apr. 5th - June 14th';
+            $classlink = '5LM8KX9WF7L98';
             break;
         default:
             $class = 'Error';
