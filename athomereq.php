@@ -82,7 +82,9 @@ $headers = 'From: '.$email_from."\r\n".
 <!-- include your own success html here -->
 
 <!-- Header Banner and Buttons -->      
-            <div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons"><a href="index.html" onMouseOver='changeBtn(1,"Images/home button small.jpg")' onMouseOut='changeBtn(1,"Images/home button.jpg")'><img src="Images/home button.jpg" class="button" alt="Home"></a><a href="aboutus.html" onMouseOver='changeBtn(2,"Images/about us button small.jpg")' onMouseOut='changeBtn(2,"Images/about us button.jpg")'><img src="Images/about us button.jpg" class="button" alt="About Us"></a><a href="Classes.html" onMouseOver='changeBtn(3,"Images/classes button small.jpg")' onMouseOut='changeBtn(3,"Images/classes button.jpg")'><img src="Images/classes button.jpg" class="button" alt="Classes"></a><a href="Media.html" onMouseOver='changeBtn(4,"Images/media button small.jpg")' onMouseOut='changeBtn(4,"Images/media button.jpg")'><img src="Images/media button.jpg" class="button" alt="Media"></a><a href="ContactUs.html" onMouseOver='changeBtn(5,"Images/contact us button small.jpg")' onMouseOut='changeBtn(5,"Images/contact us button.jpg")'><img src="Images/contact us button.jpg" class="button" alt="Contact Us"></a></div>
+            <div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons">
+					<a href="index.html" id="home" class="buttonnav"></a><a href="aboutus.html" id="about" class="buttonnav"></a><a href="Classes.html" id="classes" class="buttonnav"></a><a href="Media.html" id="media" class="buttonnav"></a><a href="blog/index.php" id="blog" class="buttonnav"></a><a href="ContactUs.html" id="contact" class="buttonnav"></a>
+				</div>
 
     <div id="aboutcontain" style="width:1144px;margin-left:auto;margin-right:auto;margin-top: 20px;">
             <p>Thank you for expressing your interest in Rhyme and Reason!</p>
