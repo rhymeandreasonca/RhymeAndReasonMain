@@ -101,7 +101,7 @@
 				margin: 0 2px;
 			}
 
-			.tuesmorn{
+			.tuesmorn,.tuesmornaug{
 				background-color: #70BD17;
     			border: 3px solid #70BD17;
 			}
@@ -118,6 +118,12 @@
 			}
 
 			.satmorn, .sataft{
+				background-color: #FF9600;
+				border: 3px solid #FF9600;
+				color: #FFFFFF;
+			}
+
+			.frimornspec,.frimidspec,.friaftspec,.tuesmidspec,.tuesaftspec{
 				background-color: #FF9600;
 				border: 3px solid #FF9600;
 				color: #FFFFFF;
@@ -544,11 +550,14 @@
 				</td> 
 				<!--Week 4 Friday-->
 				<td>
-					<!-- <ul class="frimorn">
-						<li></li><li></li>
-					</ul> -->
+					<a href="frimorn.htm" onclick="classOverlay(this.href);return false;"><ul class="frimornspec">
+						<li>9:15-10:15AM</li><li>6-24mo</li><li>Baby Time - Special Event</li>
+					</ul></a>
 					<a href="frimid.htm" onclick="classOverlay(this.href);return false;"><ul class="frimid">
-						<li>10:30-11:30PM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+						<li>10:30-11:30AM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+					</ul></a>
+					<a href="frimidspec.htm" onclick="classOverlay(this.href);return false;"><ul class="frimidspec">
+						<li>11:00-12:00PM</li><li>6-24mo</li><li>Baby Time - Special Event</li>
 					</ul></a>
 					<!-- <ul class="friaft">
 						<li></li><li></li>
@@ -681,12 +690,12 @@
 				</td> 
 			</tr>
 		</table>
-<!-- 
+
 		<h2>August</h2>
 		<table class="calendar">
 			<tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>
 			<tr class="dates"><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-			<tr class="days"> -->
+			<tr class="days">
 				<!--Week 1 Sunday-->
 				<td class="nodays">
 					<!-- <ul class="sunmorn">
@@ -790,10 +799,10 @@
 					<ul class="sateve">
 						<li></li><li></li>
 					</ul> -->
-<!-- 				</td> 
+				</td> 
 			</tr>
 			<tr class="dates"><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-			<tr class="days"> -->
+			<tr class="days">
 				<!--Week 2 Sunday-->
 				<td>
 					<!-- <ul class="sunmorn">
@@ -825,16 +834,16 @@
 				</td>
 				<!--Week 2 Tuesday-->
 				<td>
-					<!-- <ul class="tuesmorn">
-						<li></li><li></li>
-					</ul>
-					<ul class="tuesmid">
-						<li></li><li></li>
-					</ul>
-					<ul class="tuesaft">
-						<li></li><li></li>
-					</ul>
-					<ul class="tueseve">
+					<a href="tuesmornaug.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesmornaug">
+						<li>9:30-10:30PM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+					</ul></a>
+					<a href="tuesmid.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesmidspec">
+						<li>1:00-2:00PM</li><li>2-4yr</li><li>Preschool Playtime - Special Event</li>
+					</ul></a>
+					<a href="tuesaft.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesaftspec">
+						<li>2:30-3:30PM</li><li>2-4yr</li><li>Preschool Playtime - Special Event</li>
+					</ul></a>
+					<!-- <ul class="tueseve">
 						<li></li><li></li>
 					</ul> -->
 				</td> 
@@ -898,9 +907,9 @@
 						<li></li><li></li>
 					</ul> -->
 				</td> 
-<!-- 			</tr>
+ 			</tr>
 			<tr class="dates"><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-			<tr class="days"> -->
+			<tr class="days">
 				<!--Week 3 Sunday-->
 				<td>
 					<!-- <ul class="sunmorn">
@@ -932,10 +941,10 @@
 				</td>
 				<!--Week 3 Tuesday-->
 				<td>
-					<!-- <ul class="tuesmorn">
-						<li></li><li></li>
-					</ul>
-					<ul class="tuesmid">
+					<a href="tuesmornaug.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesmornaug">
+						<li>9:30-10:30PM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+					</ul></a>
+					<!-- <ul class="tuesmid">
 						<li></li><li></li>
 					</ul>
 					<ul class="tuesaft">
@@ -982,11 +991,11 @@
 					</ul>
 					<ul class="frimid">
 						<li></li><li></li>
-					</ul>
-					<ul class="friaft">
-						<li></li><li></li>
-					</ul>
-					<ul class="frieve">
+					</ul> -->
+					<a href="friaft.htm" onclick="classOverlay(this.href);return false;"><ul class="friaftspec">
+						<li>1:00-2:30PM</li><li>2+ yr</li><li>The Final Frontier - Special Event</li>
+					</ul></a>
+					<!-- <ul class="frieve">
 						<li></li><li></li>
 					</ul> -->
 				</td> 
@@ -1005,9 +1014,9 @@
 						<li></li><li></li>
 					</ul> -->
 				</td> 
-<!-- 			</tr>
+		</tr>
 			<tr class="dates"><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-			<tr class="days"> -->
+			<tr class="days">
 				<!--Week 4 Sunday-->
 				<td>
 					<!-- <ul class="sunmorn">
@@ -1039,10 +1048,10 @@
 				</td>
 				<!--Week 4 Tuesday-->
 				<td>
-					<!-- <ul class="tuesmorn">
-						<li></li><li></li>
-					</ul>
-					<ul class="tuesmid">
+					<a href="tuesmornaug.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesmornaug">
+						<li>9:30-10:30PM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+					</ul></a>
+					<!-- <ul class="tuesmid">
 						<li></li><li></li>
 					</ul>
 					<ul class="tuesaft">
@@ -1113,8 +1122,8 @@
 					</ul> -->
 				</td> 
 			</tr>
-<!-- 			<tr class="dates"><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-			<tr class="days"> -->
+ 			<tr class="dates"><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+			<tr class="days">
 				<!--Week 5 Sunday-->
 				<td>
 					<!-- <ul class="sunmorn">
@@ -1146,10 +1155,10 @@
 				</td>
 				<!--Week 5 Tuesday-->
 				<td>
-					<!-- <ul class="tuesmorn">
-						<li></li><li></li>
-					</ul>
-					<ul class="tuesmid">
+					<a href="tuesmornaug.htm" onclick="classOverlay(this.href);return false;"><ul class="tuesmornaug">
+						<li>9:30-10:30PM</li><li>0-24mo</li><li>At Home with Mother Goose</li>
+					</ul></a>
+					<!-- <ul class="tuesmid">
 						<li></li><li></li>
 					</ul>
 					<ul class="tuesaft">
@@ -1218,9 +1227,9 @@
 					<ul class="sateve">
 						<li></li><li></li>
 					</ul> -->
-<!-- 				</td> 
+ 				</td> 
 			</tr>
-		</table> -->
+		</table>
 	
 
 		<p>Select a class for more information.</p>

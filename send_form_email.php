@@ -153,33 +153,45 @@ $headers = 'From: '.$email_from."\r\n".
 
     $class;
     $classlink;
+    $payment;
     $coupon = false;
     $couponaccept = 'Your coupon code has been accepted!';
 
     switch ($class_choice) {
-        case 'tuesday100':
-            $class = 'Tuesdays at 1:00pm - 2:00pm, from Apr. 23rd - May 28th';
-            $classlink = 'ST3EPSCJR6458';
-            if($coupon_code=='B00K5'){
-                $classlink = '7FVK8NRG2BHMC';
-                $coupon = true;
-            }
-            elseif($coupon_code && $coupon_code != 'B00K5'){
-                $coupon = true;
-                $couponaccept = 'Sorry! That coupon code is not valid for this class.';
-            }
-            break;
-        case 'tuesday230':
-            $class = 'Tuesdays at 2:30pm - 3:30pm, from Apr. 23rd - May 28th';
-            $classlink = '2A3QTCNDAGY4G';
-            break;
         case 'athometues':
-            $class = 'At Home with Mother Goose, Tuesdays at 9:30am - 10:30am, from Apr. 16th - June 25th';
-            $classlink = '5LM8KX9WF7L98';
+            $class = 'At Home with Mother Goose, Tuesdays at 9:30am - 10:30am, from July 9th - July 30th';
+            $classlink = 'HU47QBCLBUSR6';
+            $payment = true;
             break;
         case 'athomefri':
-            $class = 'At Home with Mother Goose, Fridays at 10:30am - 11:30am, from Apr. 5th - June 14th';
-            $classlink = '5LM8KX9WF7L98';
+            $class = 'At Home with Mother Goose, Fridays at 10:30am - 11:30am, from July 5th - July 26th';
+            $classlink = 'HU47QBCLBUSR6';
+            $payment = true;
+            break;
+        case 'fri915':
+            $class = 'Baby Time from 9:15am - 10:15am, on Friday, July 26th';
+            $payment = false;
+            break;
+        case 'fri1100':
+            $class = 'Baby Time from 11:00am - 12:00pm, on Friday, July 26th';
+            $payment = false;
+            break;
+        case 'tues100':
+            $class = 'Playschool Playtime from 1:00pm - 2:00pm, on Tuesday, August 6th';
+            $payment = false;
+            break;
+        case 'tues230':
+            $class = 'Playschool Playtime from 2:30pm - 3:30pm, on Tuesday, August 6th';
+            $payment = false;
+            break;
+        case 'tues900':
+            $class = 'At Home with Mother Goose, Tuesdays at 9:30am - 10:30am, from August 6th - August 27th';
+            $classlink = 'HU47QBCLBUSR6';
+            $payment = true;
+            break;
+        case 'fri100':
+            $class = 'The Final Frontier from 1:00pm - 2:30pm, on Friday, August 16th';
+            $payment = false;
             break;
         default:
             $class = 'Error';
@@ -192,20 +204,16 @@ $headers = 'From: '.$email_from."\r\n".
 
 <!-- Header Banner and Buttons -->      
             <div id="banner" title="Rhyme and Reason"><a href="index.html"><img src="Images/banner alone.jpg"></a></div><div id="buttons">
-					<a href="index.html" id="home" class="buttonnav"></a><a href="aboutus.html" id="about" class="buttonnav"></a><a href="Classes.html" id="classes" class="buttonnav"></a><a href="Media.html" id="media" class="buttonnav"></a><a href="blog/index.php" id="blog" class="buttonnav"></a><a href="ContactUs.html" id="contact" class="buttonnav"></a>
-				</div>
+                    <a href="index.html" id="home" class="buttonnav"></a><a href="aboutus.html" id="about" class="buttonnav"></a><a href="Classes.html" id="classes" class="buttonnav"></a><a href="Media.html" id="media" class="buttonnav"></a><a href="blog/index.php" id="blog" class="buttonnav"></a><a href="ContactUs.html" id="contact" class="buttonnav"></a>
+                </div>
 
     <div id="aboutcontain" style="width:1144px;margin-left:auto;margin-right:auto;margin-top: 20px;">
             <p>Thank you for registering in Rhyme and Reason!</p>
             <p><?php echo($class);?></p>
             <p><?php if($coupon){echo($couponaccept);$coupon=false;}?></p>
-            <p>We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.</p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="<?php echo($classlink);?>">
-            <input type="button" value="Proceed to Paypal" alt="PayPal - The safer, easier way to pay online!" onclick="submit()" />
-            <input type="button" value="Cancel" onclick='cancel()'>
-            </form>
+            <p><?php if($payment == false){echo('We\'re Sorry! Our Online Money Transfer System is temporarily out of order. We will accept payment for this program on-site by cheque or money order. A digital or paper receipt will be issued to you after the program has ended.<br /> Thank you for your patience, and if you have any concerns, please contact our Director at: <a href="mailto:alex@rhymeandreason.ca?subject=Class%20Registration">alex@rhymeandreason.ca</a>');}
+                elseif($payment == true){echo('We use Paypal in order to provide the most secure payment options. Payment is required in advance, please click the button below to complete enrollment.<form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="'.$classlink.'"> <input type="button" value="Proceed to Paypal" alt="PayPal - The safer, easier way to pay online!" onclick="submit()" /> <input type="button" value="Cancel" onclick=\'cancel()\'> </form> ');}?>
+            </p>
     </div>
     
 <!-- Footer Navigation -->
